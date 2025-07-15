@@ -6,6 +6,7 @@
 import type * as vscode from 'vscode';
 import { NotebookDocumentSnapshot } from '../../../platform/editing/common/notebookDocumentSnapshot';
 import { TextDocumentSnapshot } from '../../../platform/editing/common/textDocumentSnapshot';
+import { ThinkingData } from '../../../platform/thinking/common/thinking';
 import { generateUuid } from '../../../util/vs/base/common/uuid';
 import { ChatRequest } from '../../../vscodeTypes';
 import { getToolName } from '../../tools/common/toolNames';
@@ -25,6 +26,7 @@ export interface IToolCallRound {
 	response: string;
 	toolInputRetry: number;
 	toolCalls: IToolCall[];
+	thinking?: ThinkingData;
 }
 
 export interface InternalToolReference extends vscode.ChatLanguageModelToolReference {
